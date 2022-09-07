@@ -1,5 +1,4 @@
 from lib2to3.pgen2 import token
-from turtle import title
 from flask import render_template, url_for, flash, redirect, request, abort, jsonify
 from capstone import app, db, bcrypt
 from capstone.forms import RegistrationForm, AccountForm, LoginForm, PostForm
