@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: linear-gradient(cornsilk 90%, white);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 2% 7% 2% 7%;
+    background-color: rgb(180, 255, 110);
+}
+.anchor {
+    /* color: rgb(28, 205, 28); */
+    color: rgb(200, 0, 142);
+    font-size: xx-large;
+    text-decoration: none;
+}
+.nav-list {
+    padding: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav-list a {
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1rem 0 0rem 0;
+    color: purple;
+}
+.nav-list a:hover { 
+    text-decoration: underline;
+}
+.margin {
+    margin: 0 10% 5% 10%;
+}
+.wrapper {
+    display: block;
+}
+
+.container {
+    display: flex;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.imgContainer {
+    width: fit-content;
+    text-align: center;
+}
+.imgContainer img {
+    padding:  0 0 0 0;
+    margin: 3px 1rem 0 1rem;
+}
+.pokedex {
+    width: 8.5rem;
+}
+.details {
+    padding-left: 2rem;
+}
+.margin1 {
+    margin: 1rem;
+}
+.blog-list {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.blog-list a {
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0rem .5rem 0rem 0rem;
+    color: purple;
+}
+.blog-list a:hover { 
+    text-decoration: underline;
+}
+.bgEmphasis {
+    background-color: rgb(180, 255, 110);
+    border-radius: 1rem;
+}
+.bgRed {
+    background-color: red;
+    border-radius: .5rem;
+    margin: 1rem;
+    margin-top: 2rem;
+    padding: .8rem;
+    width: fit-content;
+    display: inline-block;
+}
+.bgRed:hover {
+    outline: auto;
+}
+.bgRed a {
+    color: white;
+}
+.lgFont {
+    font-size: x-large;
+    margin-top: 0;
+}
+.margin0 {
+    margin-bottom: 0;
+}
+.marginTop {
+    margin-top: 5px;
+}
+.marginSides {
+    margin: 0 10% 0 10%;
+}
+.font1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+.bold {
+    font-weight: bold;
+}
