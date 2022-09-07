@@ -24,6 +24,22 @@
                 <a href="{{ url_for('register') }}">Register</a>
             {% endif %}
         </div>
+        <div class="dropdown">
+            <button onclick="mobileFunction()" class="dropbtn">&#x2630;</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="{{ url_for('home') }}">Home</a>
+              <a href="{{ url_for('pokedex') }}">Pokedex</a>
+              <a href="{{ url_for('trainers') }}">Trainers</a>
+              <a href="{{ url_for('blog') }}">Blog</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('account') }}">Account</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Sign In</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+            </div>
+          </div>
     </nav>
 
     {% with messages = get_flashed_messages() %}
