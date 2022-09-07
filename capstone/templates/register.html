@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="margin">
+        <h1 class="font1">Register</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Join Today!</legend>
+                <div class="margin1">
+                    {{ form.username.label(class="") }}
+                    <br>
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="") }}
+                        <div class="">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.email.label(class="") }}
+                    <br>
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="") }}
+                        <div class="">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.password.label(class="") }}
+                    <br>
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="") }}
+                        <div class="">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.confirm_password.label(class="") }}
+                    <br>
+
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="") }}
+                        <div class="">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.picture.label(class="") }}
+                    <br>
+
+                    {% if form.picture.errors %}
+                        {{ form.picture(class="", placeholder="Choose from below") }}
+                        <div class="">
+                            {% for error in form.picture.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.picture(class="", placeholder="Choose from below") }}
+                    {% endif %}
+                </div>
+                <div class="container wrap">
+                    <div>
+                        <div class="imgContainer">
+                            <p>1</p>
+                            <img src="/static/trainers/1.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>2</p>
+                            <img src="/static/trainers/2.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>3</p>
+                            <img src="/static/trainers/3.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>4</p>
+                            <img src="/static/trainers/4.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>5</p>
+                            <img src="/static/trainers/5.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>6</p>
+                            <img src="/static/trainers/6.webp" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="imgContainer">
+                            <p>7</p>
+                            <img src="/static/trainers/7.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="margin1">
+                    {{ form.pokemon.label(class="") }}
+                    <br>
+
+                    {% if form.pokemon.errors %}
+                        {{ form.pokemon(class="", placeholder="Favorite 1-151#") }}
+                        <div class="">
+                            {% for error in form.pokemon.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.pokemon(class="", placeholder="Favorite # 1-151") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.tagline.label(class="") }}
+                    <br>
+
+                    {% if form.tagline.errors %}
+                        {{ form.tagline(class="") }}
+                        <div class="">
+                            {% for error in form.tagline.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.tagline(class="") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="margin1">
+                {{ form.submit(class="") }}
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+{% endblock content %}

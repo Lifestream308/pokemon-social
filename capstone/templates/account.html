@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="margin">
+      <div class="blog-list">
+        <a class="bgEmphasis bold" href="{{ url_for('update_account') }}">Update Account</a>
+      </div>
+      <h4 class="margin0">Username:</h4>
+      <p class="lgFont">{{ current_user.username }}</p>
+      <h4 class="margin0">Email:</h4>
+      <p class="lgFont">{{ current_user.email }}</p>
+      <h4 class="margin0">Picture# {{ current_user.picture }}</h4>
+      <div class="imgContainer">
+          <img src="/static/trainers/{{ current_user.picture }}.webp") alt="">
+        </div>
+      <h4 class="margin0">Pokemon# {{ current_user.pokemon }}</h4>
+      <div class="imgContainer">
+          <img src="/static/images/{{ current_user.pokemon }}.gif") alt="">
+        </div>
+      <h4 class="margin0">Token:</h4>
+      <p class="lgFont">{{ current_user.token }}</p>
+    </div>
+{% endblock content %}

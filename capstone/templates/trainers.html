@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="margin">
+        <h1 class="font1">All Trainers</h1>
+        <hr>
+        {% for trainer in trainers %}
+            <h2>{{ trainer.username }}</h2>
+            <small>"{{ trainer.tagline }}"</small>
+            <div class="container">
+                <div class="imgContainer">
+                    <img src="/static/trainers/{{ trainer.picture }}.webp" alt="">
+                </div>
+                <div class="imgContainer">
+                    <img src="/static/images/{{ trainer.pokemon }}.gif" alt="">
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock content %}

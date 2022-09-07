@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="margin">
+        <h1 class="font1">Choose a Post to Update or Delete</h1>
+
+        <div class="blog-list">
+            {% if current_user.is_authenticated %}
+                <a class="bgEmphasis" href="{{ url_for('new_post') }}">New Post</a>
+            {% else %}
+                <h2>Sign in to update or create new posts!</h2>
+            {% endif %}
+        </div>
+        <hr>
+
+        {% if userposts %}
+            {% for post in userposts %}
+                <h2><a href="{{ url_for('update_post', post_id=post.id) }}">{{ post.title }}</a></h2>
+                <small>By {{ post.author.username }}</small>
+                <p>{{ post.content }}</p>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <h2>This account does not have any posts!</h2>
+
+        {% endif %}
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="margin">
+        <h1>Are you sure you want to delete this post?</h1>
+        <hr>
+        <h2>{{ post.title }}</h2>
+        <small>By {{ post.author.username }}</small>
+        <p>{{ post.content }}</p>
+        <hr>
+        <p class="bgRed"><a href="{{ url_for('delete', post_id=post.id) }}">Delete this post</a></p>
+    </div>
+{% endblock content %}

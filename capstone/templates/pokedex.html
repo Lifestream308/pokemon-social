@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="margin">
+    <h1 class="font1">Pokemon # 1-80</h1>
+
+    <h3>Enter numbers into the empty boxes and press Enter, or click Add to bring up Pokemon!</h3>
+
+    <input type="number" onkeypress="hitEnter()" name="1stinput" id="1stinput" min="1" max="151">
+    <br>
+    <input type="number" onkeypress="hitEnter()" name="2ndinput" id="2ndinput" min="1" max="151">
+    <br>
+    <input type="number" onkeypress="hitEnter()" name="3rdinput" id="3rdinput" min="1" max="151">
+    <button type="submit" onclick="chooseImages()">Add</button>
+
+    <div class="wrapper">
+        <section>
+            <div class="container">
+                <div class="imgContainer pokedex">
+                    <h3 id="title1"></h3>
+                    <img id="1stimage" src="" alt="">
+                </div>
+                <div class="details">
+                    <p id="number1"></p>
+                    <p id="content1"></p>
+                    <p id="type1"></p>
+                    <p id="weakness1"></p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="container">
+                <div class="imgContainer pokedex">
+                    <h3 id="title2"></h3>
+                    <img id="2ndimage" src="" alt="">
+                </div>
+                <div class="details">
+                    <p id="number2"></p>
+                    <p id="content2"></p>
+                    <p id="type2"></p>
+                    <p id="weakness2"></p>                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="container">
+                <div class="imgContainer pokedex">
+                    <h3 id="title3"></h3>
+                    <img id="3rdimage" src="" alt="">
+                </div>
+                <div class="details">
+                    <p id="number3"></p>
+                    <p id="content3"></p>
+                    <p id="type3"></p>
+                    <p id="weakness3"></p>                
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock content %}

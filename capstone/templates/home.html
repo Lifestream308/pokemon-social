@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="margin">
+  {% if current_user.is_authenticated %}
+    <div class="container">
+      <h1 class="font1">Hello "{{ current_user.username }}"!</h1>
+      <div class="container">
+        <div class="imgContainer">
+          <img src="/static/trainers/{{ current_user.picture }}.webp" alt="">
+        </div>
+        <div class="imgContainer">
+          <img src="/static/images/{{ current_user.pokemon }}.gif" alt="">
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container">
+      <h1 class="font1">Welcome!</h1>
+      <div class="container">
+        <div class="imgContainer">
+          <img src="/static/trainers/7.webp" alt="">
+        </div>
+        <div class="imgContainer">
+          <img src="/static/images/52.gif" alt="">
+        </div>
+      </div>
+    </div>
+    <h2>Use this <a href="{{ url_for('guest') }}">Guest Login</a> to quickly experience the site!</h2>
+    {% endif %}
+
+  <h2><a class="font1" href="{{ url_for('pokedex') }}">Pokedex</a></h2>
+  <p>Want to look up information on your favorite original 151 Pokemon? This is the spot! Enter a Pokemon's number to see a detailed page with Pokedex data, descriptions, and sprites!</p>
+
+  <h2><a class="font1" href="{{ url_for('pokedex') }}">Trainers</a></h2>
+  <p>Register as a trainer to get your name on this list. Let the community get to know you as you show off your favorite Pokemon!</p>
+
+  <h2><a class="font1" href="{{ url_for('pokedex') }}">Blog</a></h2>
+  <p>Post your latest and greatest ideas in the community Blog!</p>
+
+  {% if current_user.is_authenticated %}
+  <h2><a class="font1" href="{{ url_for('account') }}">Account</a></h2>
+  <p>Use this menu to view account and change details like your picture or favorite Pokemon!</p>
+
+  <h2><a class="font1" href="{{ url_for('logout') }}">Register Today!(Logout)</a></h2>
+  <p>If you need a new account, you will need to log out first, before you can register!</p>
+  {% else %}
+  <h2><a class="font1" href="{{ url_for('register') }}">Register Today!</a></h2>
+  <p>Register to be added to our awesome list of trainers. Sign up and then post away in the community blog!</p>
+  {% endif %}
+</div>
+{% endblock content %}

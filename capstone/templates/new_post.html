@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="margin">
+        <div class="container wrap">
+            <h1 class="font1">Blog Post</h1>
+        </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>{{ legend }}</legend>
+                <div class="margin1">
+                    {{ form.title.label(class="") }}
+                    <br>
+                    {% if form.title.errors %}
+                        {{ form.title(class="") }}
+                        <div class="">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="") }}
+                    {% endif %}
+                </div>
+                <div class="margin1">
+                    {{ form.content.label(class="") }}
+                    <br>
+                    {% if form.content.errors %}
+                        {{ form.content(class="") }}
+                        <div class="">
+                            {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.content(class="") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="margin1">
+                {{ form.submit(class="") }}
+            </div>
+        </form>
+        {% if delete %}
+            <p class="bgRed"><a href="{{ url_for('delete_post', post_id=post.id) }}">{{ delete }}</a></p>
+        {% endif %}
+    </div>
+{% endblock content %}

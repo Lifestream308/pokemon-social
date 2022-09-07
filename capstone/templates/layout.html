@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+    <title>Pokemon Social</title>
+</head>
+<body>
+    <nav>
+        <h1><a class="anchor" href="{{ url_for('home') }}">Pokemon Social</a></h1>
+        <div class="nav-list">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('pokedex') }}">Pokedex</a>
+            <a href="{{ url_for('trainers') }}">Trainers</a>
+            <a href="{{ url_for('blog') }}">Blog</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('account') }}">Account</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+
+            {% else %}
+                <a href="{{ url_for('login') }}">Sign In</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="marginSides">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>
