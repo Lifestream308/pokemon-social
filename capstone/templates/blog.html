@@ -2,7 +2,7 @@
 {% block content %}
     <div class="margin">
         <h1 class="font1">Community Blog</h1>
-        <div class="blog-list">
+        <div class="blog-list container wrap">
             {% if current_user.is_authenticated %}
                 <a class="bgEmphasis" href="{{ url_for('new_post') }}">New Post</a>
                 <a class="bgEmphasis" href="{{ url_for('userposts') }}">Update/Delete Posts</a>
