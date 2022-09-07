@@ -31,10 +31,10 @@
   <h2><a class="font1" href="{{ url_for('pokedex') }}">Pokedex</a></h2>
   <p>Want to look up information on your favorite original 151 Pokemon? This is the spot! Enter a Pokemon's number to see a detailed page with Pokedex data, descriptions, and sprites!</p>
 
-  <h2><a class="font1" href="{{ url_for('pokedex') }}">Trainers</a></h2>
+  <h2><a class="font1" href="{{ url_for('trainers') }}">Trainers</a></h2>
   <p>Register as a trainer to get your name on this list. Let the community get to know you as you show off your favorite Pokemon!</p>
 
-  <h2><a class="font1" href="{{ url_for('pokedex') }}">Blog</a></h2>
+  <h2><a class="font1" href="{{ url_for('blog') }}">Blog</a></h2>
   <p>Post your latest and greatest ideas in the community Blog!</p>
 
   {% if current_user.is_authenticated %}
