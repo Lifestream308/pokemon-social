@@ -14,4 +14,4 @@ if __name__ == '__main__':
     # py -m venv venv          second venv is the name of the virtual environment I believe
 
 
-    # When time to initiate database for heroku, it is: heroku run python --app carflask308
+    # When time to initiate database for heroku, it is: heroku run python --app appName308
