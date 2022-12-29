@@ -1,12 +1,16 @@
-// Javascript Pokemon website that takes in JSON from my own API
+// Javascript Pokemon website that takes in JSON from my own API. EDIT/UPDATE- Heroku deleted the database, JSON will now come from pokeAPI
 
 let obj
 
 async function getText() {
-    let x = await fetch('https://pokemondb308.herokuapp.com/getposts');
+    let x = await fetch('https://pokeapi.co/api/v2/pokemon-species/149/');
     let y = await x.text();
     obj = JSON.parse(y)
     console.log(obj)
+    console.log(obj.id)
+    console.log(obj.names[8].name)
+    console.log("The " + obj.genera[7].genus)
+    console.log(obj.flavor_text_entries[1].flavor_text)
   }
 
 function chooseImages() {
